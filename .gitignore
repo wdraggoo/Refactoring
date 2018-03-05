@@ -1,0 +1,17 @@
+# Gradle #
+*.gradle 
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+### Eclipse ###
+
+### Eclipse Patch ###
+# Eclipse Core		
+.project
+
+# JDT-specific (Eclipse Java Development Tools)		
+.classpath
