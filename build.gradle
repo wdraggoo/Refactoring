@@ -1,10 +1,5 @@
 apply plugin: 'application'
 
-//sourceSets {
-        //main.java.srcDirs = ['src.main.java.memoranda']
-        //main.resources.srcDirs = ['src/net/sf/memoranda/ui/']
-//}
-
 mainClassName = 'main/java/memoranda/Start'
 
 compileJava.options.encoding = 'UTF-8'
