@@ -24,15 +24,15 @@ import main.java.memoranda.EventNotificationListener;
 import main.java.memoranda.EventsManager;
 import main.java.memoranda.EventsScheduler;
 import main.java.memoranda.History;
-import main.java.memoranda.NoteList;
-import main.java.memoranda.Project;
 import main.java.memoranda.ProjectListener;
 import main.java.memoranda.ProjectManager;
-import main.java.memoranda.ResourcesList;
-import main.java.memoranda.TaskList;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
 import main.java.memoranda.date.DateListener;
+import main.java.memoranda.interfaces.INoteList;
+import main.java.memoranda.interfaces.IProject;
+import main.java.memoranda.interfaces.IResourcesList;
+import main.java.memoranda.interfaces.ITaskList;
 import main.java.memoranda.util.AgendaGenerator;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Local;
@@ -251,10 +251,10 @@ public class AgendaPanel extends JPanel {
 		CurrentProject.addProjectListener(new ProjectListener() {
 
 			public void projectChange(
-					Project prj,
-					NoteList nl,
-					TaskList tl,
-					ResourcesList rl) {
+					IProject prj,
+					INoteList nl,
+					ITaskList tl,
+					IResourcesList rl) {
 			}
 
 			public void projectWasChanged() {
@@ -262,7 +262,7 @@ public class AgendaPanel extends JPanel {
 					refresh(CurrentDate.get());
 			}});
 		EventsScheduler.addListener(new EventNotificationListener() {
-			public void eventIsOccured(main.java.memoranda.Event ev) {
+			public void eventIsOccured(main.java.memoranda.interfaces.IEvent ev) {
 				if (isActive)
 					refresh(CurrentDate.get());
 			}

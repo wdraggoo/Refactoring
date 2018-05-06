@@ -20,6 +20,7 @@ import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.KeyStroke;
 
+import main.java.memoranda.interfaces.IProject;
 import main.java.memoranda.util.Local;
 /**
  * 
@@ -103,7 +104,7 @@ public class History {
         historyListeners.add(hl);
     }
     
-    public static void removeProjectHistory(Project prj) {
+    public static void removeProjectHistory(IProject prj) {
         Vector list = new Vector();
         String id;
         
